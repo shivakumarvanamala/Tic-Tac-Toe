@@ -1,0 +1,46 @@
+.content {
+    height: 60%;
+    width: 30vw;
+    /* width: 40%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* border: 2px solid blue; */
+}
+
+.playerContainer {
+    display: flex;
+}
+
+.player {
+    width: 15vw;
+    font-weight: bold;
+    color: white;
+}
+
+.player h3 {
+    color: rgba(0, 0, 255, 0.546);
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.player p {
+    font-size: 1.2rem;
+    color: rgb(13, 91, 122);
+}
+
+.player p span {
+    font-size: 1.2em;
+    color: chocolate;
+}
+
+.winnerView {
+    height: 10vh;
+    width: 20vw;
+    text-shadow: 0 0 8px rgba(250, 247, 247, 0.5);
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgb(247, 67, 2);
+}
