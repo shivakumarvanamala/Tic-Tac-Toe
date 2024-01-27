@@ -11,8 +11,7 @@ function TicTacToe() {
   const [xPlaying, setXPlaying] = useState(true);
   const [winnerView, setWinnerView] = useState("");
 
-  const [XScore, setXScore] = useState(0);
-  const [OScore, setOScore] = useState(0);
+  const [Score, setScore] = useState({ X: 0, O: 0 });
 
   const [winClass, setWinClass] = useState("");
 
@@ -20,11 +19,11 @@ function TicTacToe() {
 
   useEffect(() => {
     if (winner === "X") {
-      setXScore((XScore) => XScore + 1);
+      setScore((prev) => ({ ...prev, X: Score.X + 1 }));
       setWinnerView(() => "X");
       setWinClass(() => "winX");
     } else if (winner === "O") {
-      setOScore((OScore) => OScore + 1);
+      setScore((prev) => ({ ...prev, O: Score.O + 1 }));
       setWinnerView(() => "O");
       setWinClass("winO");
     } else if (winner === "draw") {
@@ -61,8 +60,8 @@ function TicTacToe() {
           winnerView={winnerView}
           setWinnerView={setWinnerView}
           setXPlaying={setXPlaying}
-          XScore={XScore}
-          OScore={OScore}
+          XScore={Score.X}
+          OScore={Score.O}
           winClass={winClass}
         />
       </div>

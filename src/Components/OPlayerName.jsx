@@ -2,20 +2,25 @@ import { useState } from "react";
 
 import styles from "./OPlayerName.module.css";
 
-const OPlayerName = (props) => {
-  const propPlayerO = props.playerO;
-
+const OPlayerName = () => {
   const [inputValueO, setInputValueO] = useState("");
 
   const handleFormO = (eve) => {
     eve.preventDefault();
     setInputValueO(inputValueO);
 
-    const span = document.createElement("span");
-    span.innerHTML = inputValueO + " - O";
-    const playerO = document.getElementsByClassName(propPlayerO);
+    const checkValid = (str) => {
+      return /^[a-zA-Z0-9]+$/.test(str) ? str.toUpperCase() : "PLAYER";
+    };
 
-    playerO[0].replaceChild(span, playerO[0].firstChild);
+    const span = document.createElement("span");
+    span.innerHTML = checkValid(inputValueO.trim());
+    span.className = styles.oInput;
+
+    const form = document.getElementsByClassName(styles.form);
+
+    // console.log(form);
+    form[0].replaceChild(span, form[0].firstChild);
   };
 
   const handleInputValueO = (eve) => {
@@ -24,7 +29,7 @@ const OPlayerName = (props) => {
 
   return (
     <div className={styles.displayFlex}>
-      <form onSubmit={(eve) => handleFormO(eve)}>
+      <form onSubmit={(eve) => handleFormO(eve)} className={styles.form}>
         <input
           className={styles.oInput}
           type="text"

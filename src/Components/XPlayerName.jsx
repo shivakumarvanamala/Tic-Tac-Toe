@@ -2,22 +2,25 @@ import { useState } from "react";
 
 import styles from "./XPlayerName.module.css";
 
-const XPlayerName = (props) => {
-  const propPlayerX = props.playerX;
-
+const XPlayerName = () => {
   const [inputValueX, setInputValueX] = useState("");
 
   const handleFormX = (eve) => {
     eve.preventDefault();
     setInputValueX(inputValueX);
 
-    const span = document.createElement("span");
-    span.innerHTML = inputValueX + " - X";
-    span.className = styles.xInput;
-    const playerX = document.getElementsByClassName(propPlayerX);
+    const checkValid = (str) => {
+      // checks whether str is AlphaNumeric or not
+      return /^[a-zA-Z0-9]+$/.test(str) ? str.toUpperCase() : "PLAYER";
+    };
 
-    console.log(playerX);
-    playerX[0].replaceChild(span, playerX[0].firstChild);
+    const span = document.createElement("span");
+    span.innerHTML = checkValid(inputValueX.trim());
+    span.className = styles.xInput;
+
+    const form = document.getElementsByClassName(styles.form);
+
+    form[0].replaceChild(span, form[0].firstChild);
   };
 
   const handleInputX = (eve) => {
@@ -26,7 +29,7 @@ const XPlayerName = (props) => {
 
   return (
     <div className={styles.displayFlex}>
-      <form onSubmit={(eve) => handleFormX(eve)}>
+      <form onSubmit={(eve) => handleFormX(eve)} className={styles.form}>
         <input
           className={styles.xInput}
           type="text"

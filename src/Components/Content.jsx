@@ -17,15 +17,15 @@ const Content = ({
     <div className={styles.content}>
       <div className={styles.playerContainer}>
         <div className={`${styles.player} ${styles.borderRight}`}>
-          <XPlayerName playerX={styles.playerX} />
+          <XPlayerName />
           <p>
-            Score: <span>{XScore}</span>
+            Score : <span> {XScore}</span>
           </p>
         </div>
-        <div className={`${styles.player}`}>
-          <OPlayerName playerO={styles.playerO} />
+        <div className={styles.player}>
+          <OPlayerName />
           <p>
-            Score: <span>{OScore}</span>
+            Score : <span> {OScore}</span>
           </p>
         </div>
       </div>

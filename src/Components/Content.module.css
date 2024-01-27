@@ -16,44 +16,31 @@
     border-right: 0.25rem solid rgba(247, 245, 243, 0.308);
 }
 
-
 .player {
-    width: 15vw;
+    width: 20vw;
     font-weight: bold;
     color: white;
     float: right;
-    /* border: 1px solid pink; */
 }
-
-/* .player .playerO,
-.player .playerX {
-    font-size: 2rem;
-    font-weight: 900;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .player input {
     display: inline;
     height: 3rem;
     width: 9rem;
     background-color: transparent;
-    outline: none;
-    /* border: none; */
-    border-radius: 10px;
-    border: 1px solid white;
+    font-size: 1.5rem;
     line-height: 2;
-    font-weight: bold;
-    font-size: 2rem;
-    padding: 0;
+    border-radius: 10px;
+    outline: 1px solid rgba(169, 150, 150, 0.514);
+    border: 1px solid transparent;
+    font-weight: 900;
+    padding-left: 1rem;
 }
 
 .player input:focus {
-    outline: 1px solid rgba(169, 150, 150, 0.514);
-    border: none;
+    outline: 1px solid transparent;
+    border: 1px solid white;
 }
-
 
 .winX,
 .playerX {
