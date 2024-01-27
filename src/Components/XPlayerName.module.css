@@ -1,0 +1,17 @@
+.xInput {
+    color: rgb(247, 67, 2);
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.displayFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.displayFlex span {
+    color: rgb(247, 67, 2);
+    font-size: 2rem;
+    font-weight: 900;
+}

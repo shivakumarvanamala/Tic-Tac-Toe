@@ -25,16 +25,16 @@
     /* border: 1px solid pink; */
 }
 
-.player h3 {
+/* .player .playerO,
+.player .playerX {
     font-size: 2rem;
     font-weight: 900;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .player input {
-    /* float: left; */
     display: inline;
     height: 3rem;
     width: 9rem;
@@ -54,13 +54,6 @@
     border: none;
 }
 
-.xInput {
-    color: rgb(247, 67, 2);
-}
-
-.oInput {
-    color: rgb(0, 128, 0);
-}
 
 .winX,
 .playerX {
