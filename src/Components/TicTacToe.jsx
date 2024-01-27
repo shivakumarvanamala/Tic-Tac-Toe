@@ -21,12 +21,10 @@ function TicTacToe() {
   useEffect(() => {
     if (winner === "X") {
       setXScore((XScore) => XScore + 1);
-      console.log("XScore", XScore);
       setWinnerView(() => "X");
       setWinClass(() => "winX");
     } else if (winner === "O") {
       setOScore((OScore) => OScore + 1);
-      console.log("OScore", OScore);
       setWinnerView(() => "O");
       setWinClass("winO");
     } else if (winner === "draw") {
@@ -51,7 +49,7 @@ function TicTacToe() {
   return (
     <>
       <Heading />
-      <div className="container">
+      <div className="wrapper">
         <Container
           mark={mark}
           handleBoxClick={handleBoxClick}

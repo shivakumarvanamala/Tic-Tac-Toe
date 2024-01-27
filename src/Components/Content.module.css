@@ -21,11 +21,45 @@
     width: 15vw;
     font-weight: bold;
     color: white;
+    float: right;
+    /* border: 1px solid pink; */
 }
 
 .player h3 {
     font-size: 2rem;
     font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player input {
+    /* float: left; */
+    display: inline;
+    height: 3rem;
+    width: 9rem;
+    background-color: transparent;
+    outline: none;
+    /* border: none; */
+    border-radius: 10px;
+    border: 1px solid white;
+    line-height: 2;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 0;
+}
+
+.player input:focus {
+    outline: 1px solid rgba(169, 150, 150, 0.514);
+    border: none;
+}
+
+.xInput {
+    color: rgb(247, 67, 2);
+}
+
+.oInput {
+    color: rgb(0, 128, 0);
 }
 
 .winX,
