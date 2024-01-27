@@ -10,6 +10,7 @@ const winningCombos = [
 ];
 
 function winnerCheck(mark) {
+
   for (let combo of winningCombos) {
     const [a, b, c] = combo;
     if (mark[a] && mark[a] === mark[b] && mark[a] === mark[c]) {
@@ -17,25 +18,9 @@ function winnerCheck(mark) {
     }
   }
 
-  // Check rows
-  // for (let i = 0; i < 9; i += 3) {
-  //   if (mark[i] && mark[i] === mark[i + 1] && mark[i] === mark[i + 2]) {
-  //     return mark[i];
-  //   }
-  // }
-
-  // Check columns
-  // for (let i = 0; i < 3; i++) {
-  //   if (mark[i] && mark[i] === mark[i + 3] && mark[i] === mark[i + 6]) {
-  //     return mark[i];
-  //   }
-  // }
-
-  // Check diagonals
-  // if (mark[0] && mark[0] === mark[4] && mark[0] === mark[8])
-  //   return mark[0];
-  // if (mark[2] && mark[2] === mark[4] && mark[2] === mark[6])
-  //   return mark[2];
+  if (mark.every(cell => cell !== null)) {
+    return "draw";
+  }
 
   return null;
 }

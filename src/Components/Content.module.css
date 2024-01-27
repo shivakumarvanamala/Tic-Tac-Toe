@@ -21,9 +21,23 @@
 }
 
 .player h3 {
-    color: rgba(0, 0, 255, 0.546);
+    /* color: rgba(0, 0, 255, 0.546); */
     font-size: 2rem;
     font-weight: 900;
+}
+
+.winX,
+.playerX {
+    color: rgb(247, 67, 2);
+}
+
+.winO,
+.playerO {
+    color: rgb(0, 128, 0);
+}
+
+.winDraw {
+    color: rgb(210, 156, 30);
 }
 
 .player p {
@@ -38,9 +52,13 @@
 
 .winnerView {
     height: 10vh;
-    width: 20vw;
-    text-shadow: 0 0 8px rgba(250, 247, 247, 0.5);
-    font-size: 4rem;
+    width: 30vw;
+    text-shadow: 2px 2px 4px rgba(250, 247, 247, 0.742);
+    font-size: 6rem;
     font-weight: 900;
-    color: rgb(247, 67, 2);
+    /* color: rgb(247, 67, 2); */
+}
+
+.winnerView:nth-child(2) {
+    color: rgb(17, 171, 40);
 }

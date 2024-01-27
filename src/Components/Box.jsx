@@ -6,9 +6,11 @@ const Box = ({ mark, handleBoxClick, index }) => {
     <div
       className={`${styles.box} ${player}`}
       onClick={() => {
-        // eve.target.className = `${styles.box} ${player} ${styles.clicked}`;
-        return handleBoxClick(index);
+        if (mark === null) {
+          return handleBoxClick(index);
+        }
       }}
+      style={{ pointerEvents: mark !== null ? "none" : "auto" }}
     >
       {mark}
     </div>
