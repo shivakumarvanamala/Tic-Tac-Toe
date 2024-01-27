@@ -8,22 +8,28 @@
 
 body {
   font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-  margin: 0;
-  /* display: flex;
-  justify-content: space-around;
-  align-items: center; */
-  min-width: 320px;
   height: 100vh;
-  /* overflow: hidden; */
+  width: 100vw;
+
+  margin: 0;
+  padding: 0;
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
 }
 
 .container {
-  width: 70%;
+  height: 100%;
+  width: 90vw;
+  margin-left: 0;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Container from "./Container";
 import Heading from "./Heading";
@@ -9,7 +9,31 @@ import winnerCheck from "./winnerCheck";
 function TicTacToe() {
   const [mark, setMark] = useState(Array(9).fill(null));
   const [xPlaying, setXPlaying] = useState(true);
-  const [winnerView, setWinView] = useState("");
+  const [winnerView, setWinnerView] = useState("");
+
+  const [XScore, setXScore] = useState(0);
+  const [OScore, setOScore] = useState(0);
+
+  const [winClass, setWinClass] = useState("");
+
+  const winner = winnerCheck(mark);
+
+  useEffect(() => {
+    if (winner === "X") {
+      setXScore((XScore) => XScore + 1);
+      console.log("XScore", XScore);
+      setWinnerView(() => "X");
+      setWinClass(() => "winX");
+    } else if (winner === "O") {
+      setOScore((OScore) => OScore + 1);
+      console.log("OScore", OScore);
+      setWinnerView(() => "O");
+      setWinClass("winO");
+    } else if (winner === "draw") {
+      setWinnerView(() => "Draw!");
+      setWinClass(() => "winDraw");
+    }
+  }, [winner]);
 
   const handleBoxClick = (boxIdx) => {
     const updatedMark = mark.map((value, index) => {
@@ -28,13 +52,20 @@ function TicTacToe() {
     <>
       <Heading />
       <div className="container">
-        <Container mark={mark} handleBoxClick={handleBoxClick} />
+        <Container
+          mark={mark}
+          handleBoxClick={handleBoxClick}
+          winner={winner}
+        />
         <Content
           mark={mark}
           setMark={setMark}
           winnerView={winnerView}
-          setWinnerView={setWinView}
+          setWinnerView={setWinnerView}
           setXPlaying={setXPlaying}
+          XScore={XScore}
+          OScore={OScore}
+          winClass={winClass}
         />
       </div>
     </>

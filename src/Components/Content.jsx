@@ -1,38 +1,20 @@
-import { useState, useEffect } from "react";
-
 import styles from "./Content.module.css";
 
 import Reset from "./Reset";
 
-import winnerCheck from "./winnerCheck";
-
-const Content = ({ mark, setMark, winnerView, setWinnerView, setXPlaying }) => {
-  const winner = winnerCheck(mark);
-
-  const [XScore, setXScore] = useState(0);
-  const [OScore, setOScore] = useState(0);
-
-  const [winClass, setWinClass] = useState("");
-
-  useEffect(() => {
-    if (winner === "X") {
-      setXScore((XScore) => XScore + 1);
-      setWinnerView("X");
-      setWinClass("winX");
-    } else if (winner === "O") {
-      setOScore((OScore) => OScore + 1);
-      setWinnerView("O");
-      setWinClass("winO");
-    } else if (winner === "draw") {
-      setWinnerView("Draw!");
-      setWinClass("winDraw");
-    }
-  }, [winner, winClass]);
-
+const Content = ({
+  setMark,
+  winnerView,
+  setXPlaying,
+  setWinnerView,
+  XScore,
+  OScore,
+  winClass,
+}) => {
   return (
     <div className={styles.content}>
       <div className={styles.playerContainer}>
-        <div className={styles.player}>
+        <div className={`${styles.player} ${styles.borderRight}`}>
           <h3 className={styles.playerX}>Player X</h3>
           <p>
             Score: <span>{XScore}</span>
@@ -45,8 +27,8 @@ const Content = ({ mark, setMark, winnerView, setWinnerView, setXPlaying }) => {
           </p>
         </div>
       </div>
-      <div>
-        <h3 className={`${styles.winnerView} ${styles[winClass]}`}>
+      <div className={styles.winnerView}>
+        <h3 className={styles[winClass]}>
           <span>&nbsp;{winnerView}</span>
           <span>{(winnerView === "X" || winnerView === "O") && " wins!"}</span>
         </h3>

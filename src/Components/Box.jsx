@@ -1,7 +1,9 @@
 import styles from "./Box.module.css";
 
-const Box = ({ mark, handleBoxClick, index }) => {
+const Box = ({ mark, handleBoxClick, index, winner }) => {
   const player = mark === "X" ? styles.boxX : styles.boxO;
+  const togglePointerEvents = mark != null || winner === "X" || winner === "O";
+
   return (
     <div
       className={`${styles.box} ${player}`}
@@ -10,7 +12,7 @@ const Box = ({ mark, handleBoxClick, index }) => {
           return handleBoxClick(index);
         }
       }}
-      style={{ pointerEvents: mark !== null ? "none" : "auto" }}
+      style={{ pointerEvents: togglePointerEvents ? "none" : "auto" }}
     >
       {mark}
     </div>

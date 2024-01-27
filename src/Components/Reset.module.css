@@ -8,6 +8,7 @@
     border-radius: 2rem;
     font-weight: bold;
     transition: all 0.2s ease;
+    margin-top: 4rem;
 }
 
 .resetBtn:active {

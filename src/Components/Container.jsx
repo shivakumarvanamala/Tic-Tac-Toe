@@ -2,7 +2,7 @@ import Box from "./Box";
 
 import styles from "./Container.module.css";
 
-const Container = ({ mark, handleBoxClick }) => {
+const Container = ({ mark, handleBoxClick, winner }) => {
   return (
     <div className={styles.container}>
       {mark.map((value, index) => (
@@ -11,6 +11,7 @@ const Container = ({ mark, handleBoxClick }) => {
           key={index}
           handleBoxClick={handleBoxClick}
           index={index}
+          winner={winner}
         />
       ))}
     </div>
