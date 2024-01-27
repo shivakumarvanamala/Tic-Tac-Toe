@@ -4,10 +4,10 @@ import styles from "./Content.module.css";
 
 import Reset from "./Reset";
 
-import checkWin from "./checkWin";
+import winnerCheck from "./winnerCheck";
 
 const Content = ({ mark, setMark, winnerView, setWinnerView, setXPlaying }) => {
-  const winner = checkWin(mark);
+  const winner = winnerCheck(mark);
 
   const [XScore, setXScore] = useState(0);
   const [OScore, setOScore] = useState(0);

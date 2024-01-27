@@ -4,7 +4,7 @@ import Container from "./Container";
 import Heading from "./Heading";
 import Content from "./Content";
 
-import checkWin from "./checkWin";
+import winnerCheck from "./winnerCheck";
 
 function TicTacToe() {
   const [mark, setMark] = useState(Array(9).fill(null));
@@ -13,7 +13,7 @@ function TicTacToe() {
 
   const handleBoxClick = (boxIdx) => {
     const updatedMark = mark.map((value, index) => {
-      if (value === null && !checkWin(mark)) {
+      if (value === null && !winnerCheck(mark)) {
         if (index === boxIdx) {
           return xPlaying ? "X" : "O";
         }
