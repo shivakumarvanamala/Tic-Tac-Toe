@@ -18,7 +18,10 @@ const Content = ({
   const [playerName, setPlayerName] = useState({
     X: "X",
     O: "O",
+    "Draw!": "Draw!",
   });
+
+  console.log(playerName[winnerView]);
 
   return (
     <div className={styles.content}>

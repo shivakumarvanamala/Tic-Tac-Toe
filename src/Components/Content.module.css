@@ -6,6 +6,10 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    /* border: 2px solid violet; */
+    margin-top: 4rem;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
 }
 
 .playerContainer {

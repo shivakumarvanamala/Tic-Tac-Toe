@@ -9,7 +9,7 @@ function winnerCheck(mark) {
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6],
-  ];
+  ]
 
   for (let combo of winningCombos) {
     const [a, b, c] = combo;
@@ -19,9 +19,11 @@ function winnerCheck(mark) {
   }
 
   if (mark.every(cell => cell !== null)) {
+    console.log("draw match");
     return "draw";
   }
   return null;
+
 }
 
 export default winnerCheck;
