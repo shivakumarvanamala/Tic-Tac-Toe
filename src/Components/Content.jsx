@@ -1,8 +1,10 @@
-import styles from "./Content.module.css";
+import { useState } from "react";
 
 import XPlayerName from "./XPlayerName";
 import OPlayerName from "./OPlayerName";
 import Reset from "./Reset";
+
+import styles from "./Content.module.css";
 
 const Content = ({
   setMark,
@@ -13,17 +15,22 @@ const Content = ({
   OScore,
   winClass,
 }) => {
+  const [playerName, setPlayerName] = useState({
+    X: "X",
+    O: "O",
+  });
+
   return (
     <div className={styles.content}>
       <div className={styles.playerContainer}>
         <div className={`${styles.player} ${styles.borderRight}`}>
-          <XPlayerName />
+          <XPlayerName setPlayerName={setPlayerName} />
           <p>
             Score : <span> {XScore}</span>
           </p>
         </div>
         <div className={styles.player}>
-          <OPlayerName />
+          <OPlayerName setPlayerName={setPlayerName} />
           <p>
             Score : <span> {OScore}</span>
           </p>
@@ -31,7 +38,7 @@ const Content = ({
       </div>
       <div className={styles.winnerView}>
         <h3 className={styles[winClass]}>
-          <span>&nbsp;{winnerView}</span>
+          <span className={styles.winnerName}>{playerName[winnerView]}</span>
           <span>{(winnerView === "X" || winnerView === "O") && " wins!"}</span>
         </h3>
       </div>

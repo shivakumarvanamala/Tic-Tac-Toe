@@ -2,15 +2,24 @@ import { useState } from "react";
 
 import styles from "./OPlayerName.module.css";
 
-const OPlayerName = () => {
+const OPlayerName = ({ setPlayerName }) => {
   const [inputValueO, setInputValueO] = useState("");
 
   const handleFormO = (eve) => {
     eve.preventDefault();
+
     setInputValueO(inputValueO);
 
     const checkValid = (str) => {
-      return /^[a-zA-Z0-9]+$/.test(str) ? str.toUpperCase() : "PLAYER";
+      if (/^[a-zA-Z0-9]+$/.test(str)) {
+        setPlayerName((prevPlayerName) => ({
+          ...prevPlayerName,
+          O: str.toUpperCase(),
+        }));
+        // checks whether str is AlphaNumeric or not
+        return str.toUpperCase();
+      }
+      return "PLAYER";
     };
 
     const span = document.createElement("span");
@@ -19,7 +28,6 @@ const OPlayerName = () => {
 
     const form = document.getElementsByClassName(styles.form);
 
-    // console.log(form);
     form[0].replaceChild(span, form[0].firstChild);
   };
 

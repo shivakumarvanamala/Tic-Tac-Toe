@@ -2,16 +2,24 @@ import { useState } from "react";
 
 import styles from "./XPlayerName.module.css";
 
-const XPlayerName = () => {
+const XPlayerName = ({ setPlayerName }) => {
   const [inputValueX, setInputValueX] = useState("");
 
   const handleFormX = (eve) => {
     eve.preventDefault();
+
     setInputValueX(inputValueX);
 
     const checkValid = (str) => {
-      // checks whether str is AlphaNumeric or not
-      return /^[a-zA-Z0-9]+$/.test(str) ? str.toUpperCase() : "PLAYER";
+      if (/^[a-zA-Z0-9]+$/.test(str)) {
+        setPlayerName((prevPlayerName) => ({
+          ...prevPlayerName,
+          X: str.toUpperCase(),
+        }));
+        // checks whether str is AlphaNumeric or not
+        return str.toUpperCase();
+      }
+      return "PLAYER";
     };
 
     const span = document.createElement("span");
