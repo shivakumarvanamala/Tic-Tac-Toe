@@ -20,6 +20,16 @@
     font-weight: 900;
 }
 
+.edit {
+    position: absolute;
+    left: 81.5%;
+    top: 43%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: auto;
+    filter: invert(0.5);
+}
+
 .displayFlex {
     display: flex;
     align-items: center;

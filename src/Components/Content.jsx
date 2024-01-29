@@ -21,8 +21,6 @@ const Content = ({
     "Draw!": "Draw!",
   });
 
-  console.log(playerName[winnerView]);
-
   return (
     <div className={styles.content}>
       <div className={styles.playerContainer}>
