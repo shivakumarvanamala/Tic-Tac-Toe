@@ -10,6 +10,11 @@ const XPlayerName = ({ setPlayerName }) => {
 
     setInputValueX(inputValueX);
 
+    const removeEle = document.getElementsByClassName(styles.edit);
+
+    removeEle[0].remove();
+    console.log(removeEle);
+
     const checkValid = (str) => {
       if (/^[a-zA-Z0-9]+$/.test(str)) {
         setPlayerName((prevPlayerName) => ({
@@ -46,8 +51,9 @@ const XPlayerName = ({ setPlayerName }) => {
           value={inputValueX}
           onChange={(eve) => handleInputX(eve)}
         />
+        <img className={styles.edit} src="/edit-tool.png" alt="✏️" />
       </form>
-      <span>&nbsp;- X</span>
+      <span>&nbsp; X</span>
     </div>
   );
 };
