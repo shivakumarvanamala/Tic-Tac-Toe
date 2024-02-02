@@ -1,7 +1,7 @@
 .xInput {
     color: rgb(247, 67, 2);
     font-weight: 900;
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
     font-size: 2.5rem;
 
     display: inline;
@@ -13,6 +13,7 @@
     border-radius: 10px;
     border: 1px solid transparent;
     font-weight: bold;
+    text-align: center;
     /* padding-left: 1rem; */
 }
 

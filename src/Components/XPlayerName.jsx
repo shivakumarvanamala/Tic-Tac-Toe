@@ -16,12 +16,12 @@ const XPlayerName = ({ setPlayerName }) => {
     console.log(removeEle);
 
     const checkValid = (str) => {
+      // checks whether str is AlphaNumeric or not
       if (/^[a-zA-Z0-9]+$/.test(str)) {
         setPlayerName((prevPlayerName) => ({
           ...prevPlayerName,
           X: str.toUpperCase(),
         }));
-        // checks whether str is AlphaNumeric or not
         return str.toUpperCase();
       }
       return "PLAYER";
@@ -48,6 +48,7 @@ const XPlayerName = ({ setPlayerName }) => {
           type="text"
           placeholder="Player"
           maxLength="8"
+          spellCheck="false"
           value={inputValueX}
           onChange={(eve) => handleInputX(eve)}
         />

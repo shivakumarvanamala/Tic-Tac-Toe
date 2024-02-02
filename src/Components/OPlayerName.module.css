@@ -1,7 +1,7 @@
 .oInput {
     color: rgb(0, 128, 0);
     font-weight: 900;
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
     font-size: 2.5rem;
 
     display: inline;
@@ -13,11 +13,17 @@
     border-radius: 10px;
     border: 1px solid transparent;
     font-weight: bold;
+    text-align: center;
 }
 
 .oInput::placeholder {
     color: rgba(0, 128, 0, 0.395);
     font-weight: 900;
+}
+
+.submitted {
+    border: none;
+    outline: none;
 }
 
 .edit {

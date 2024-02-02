@@ -18,7 +18,7 @@ const Content = ({
   const [playerName, setPlayerName] = useState({
     X: "X",
     O: "O",
-    "Draw!": "Draw!",
+    "Tie!": "Tie!",
   });
 
   return (

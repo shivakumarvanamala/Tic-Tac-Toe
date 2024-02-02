@@ -26,8 +26,8 @@ function TicTacToe() {
       setScore((prev) => ({ ...prev, O: Score.O + 1 }));
       setWinnerView(() => "O");
       setWinClass("winO");
-    } else if (winner === "draw") {
-      setWinnerView(() => "Draw!");
+    } else if (winner === "tie") {
+      setWinnerView(() => "Tie!");
       setWinClass(() => "winDraw");
     }
   }, [winner]);

@@ -19,8 +19,7 @@ function winnerCheck(mark) {
   }
 
   if (mark.every(cell => cell !== null)) {
-    console.log("draw match");
-    return "draw";
+    return "tie";
   }
   return null;
 
